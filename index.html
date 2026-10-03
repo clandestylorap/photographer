@@ -1,0 +1,752 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guillermo | Fotógrafo de moda y retrato en Barcelona</title>
+<meta name="description" content="Portfolio de Guillermo, fotógrafo de moda, retrato y campañas con base en Barcelona. Agenda abierta para el primer trimestre de 2027.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Guillermo | Fotógrafo de moda y retrato">
+<meta property="og:description" content="Moda, retrato y campañas con luz natural y color directo.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=75">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000'/%3E%3Ctext x='16' y='24' font-family='Helvetica,Arial,sans-serif' font-weight='700' font-size='24' text-anchor='middle' fill='%23fff'%3EG%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+
+<!-- Tailwind v4 (CDN) -->
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+<style type="text/tailwindcss">
+@theme {
+  --color-canvas-white: #ffffff;
+  --color-wordmark-black: #000000;
+  --color-vermillion-frame: #e21715;
+  --color-cobalt-frame: #086392;
+  --color-marigold-frame: #f2572c;
+  --color-fern-frame: #5bc52c;
+  --color-brass-frame: #b3813c;
+  --color-signal-red: #f11216;
+  --color-cyan-blue: #2e99c9;
+  --font-helvetica: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", ui-sans-serif, system-ui, sans-serif;
+  --spacing-15: 15px;
+  --spacing-43: 43px;
+}
+</style>
+
+<style>
+  :root {
+    --m-ease-out: cubic-bezier(.2, .8, .2, 1);
+    --m-ease-in-out: cubic-bezier(.77, 0, .18, 1);
+    --m-fast: .25s;
+    --m-base: .45s;
+    --mark: min(18.5vh, 25vw);
+  }
+  html { background: #fff; }
+  body {
+    background: #fff; color: #000;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", ui-sans-serif, system-ui, sans-serif;
+    font-weight: 700; letter-spacing: -0.02em;
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  }
+  img { display: block; }
+
+  /* Lenis */
+  html.lenis, html.lenis body { height: auto; }
+  .lenis.lenis-smooth { scroll-behavior: auto !important; }
+  .lenis.lenis-stopped { overflow: hidden; }
+
+  /* Texto dividido (kit de movimiento) */
+  .m-word { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .1em; margin-bottom: -.1em; }
+  .m-char, .m-inner { display: inline-block; will-change: transform; }
+
+  /* Wordmark vertical, pegado al margen izquierdo */
+  .mark {
+    position: sticky; top: 15px; align-self: start;
+    height: calc(100vh - 30px); height: calc(100dvh - 30px);
+    width: calc(var(--mark) * .85);
+  }
+  .mark-nav { position: absolute; top: 0; left: 0; display: flex; flex-direction: column; align-items: flex-start; }
+  .mark-h1 {
+    position: absolute; left: 0; top: 100%; margin: 0;
+    transform-origin: 0 0; transform: rotate(-90deg);
+    font-size: var(--mark); line-height: .85; letter-spacing: -0.02em; white-space: nowrap; font-weight: 700;
+  }
+
+  /* Navegacion: enlaces desnudos con subrayado cromatico de 1px */
+  .nav-link { display: inline-block; padding: 6px 0; font-size: 10px; line-height: 1; letter-spacing: -0.2px; }
+  .nav-link span { display: inline-block; border-bottom: 1px solid var(--c); padding-bottom: 1px; transition: border-color var(--m-fast) var(--m-ease-out); }
+  .nav-link:hover span, .nav-link:focus-visible span { border-color: #000; }
+
+  /* Masonry: tiles con marco cromatico de 1px y gutters de 15px */
+  .frame {
+    position: relative; overflow: hidden; background: #000;
+    border: 1px solid var(--frame, #000);
+    transition: border-color .8s var(--m-ease-out);
+  }
+  .frame img {
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+    transition: transform .9s var(--m-ease-out);
+  }
+  figcaption {
+    display: block; margin-top: 6px; font-size: 10px; line-height: 1.2; letter-spacing: -0.2px;
+    text-decoration: underline; text-decoration-color: var(--frame, #000);
+    text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-skip-ink: none;
+  }
+  .ul {
+    text-decoration: underline; text-decoration-color: var(--frame, #000);
+    text-decoration-thickness: 1px; text-underline-offset: 3px;
+  }
+  .txt { padding: 15px 0 43px; }
+  @media (hover: hover) and (pointer: fine) {
+    .tile:hover .frame img { transform: scale(1.03); }
+  }
+
+  /* Rotura a ancho completo */
+  .span-all { column-span: all; }
+  .brk { position: relative; aspect-ratio: 16 / 9; max-height: 88vh; max-height: 88dvh; overflow: hidden; background: #000; margin: 15px 0 30px; }
+  .brk img { position: absolute; left: 0; right: 0; top: -7%; height: 114%; width: 100%; object-fit: cover; will-change: transform; }
+  @media (max-width: 559.98px) { .brk { aspect-ratio: 4 / 5; } }
+
+  /* Accion con borde cromatico: el unico elemento interactivo */
+  .act {
+    display: inline-flex; align-items: center; gap: 8px;
+    max-width: 100%; padding: 10px 14px; font-size: 18px; line-height: 1.5; letter-spacing: -0.36px;
+    color: #000; text-decoration: none; border: 1px solid var(--c);
+    transition: border-color var(--m-fast) var(--m-ease-out), transform var(--m-fast) var(--m-ease-out);
+  }
+  .act span { min-width: 0; overflow-wrap: anywhere; }
+  .act svg { width: 18px; height: 18px; stroke-width: 2; flex: none; transition: transform var(--m-base) var(--m-ease-out); }
+  .act:hover, .act:focus-visible { border-color: #000; }
+  .act:hover .arrow, .act:focus-visible .arrow { transform: translate(2px, -2px); }
+  .act:active { transform: scale(.97); }
+
+  :focus-visible { outline: 2px solid #000; outline-offset: 3px; }
+  .skip { position: absolute; left: -9999px; top: 0; background: #fff; padding: 8px 12px; font-size: 14px; }
+  .skip:focus { left: 15px; top: 15px; z-index: 10; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; transition-delay: 0s !important; }
+  }
+</style>
+</head>
+
+<body data-motion="sutil" class="font-helvetica font-bold bg-canvas-white text-wordmark-black">
+<a class="skip" href="#trabajos">Saltar al contenido</a>
+
+<div class="grid grid-cols-[auto_1fr] gap-x-[15px] p-[15px] min-h-[100dvh]">
+
+  <aside class="mark" aria-label="Guillermo">
+    <nav class="mark-nav" aria-label="Principal">
+      <a class="nav-link" style="--c:#f11216" href="#trabajos"><span>trabajos</span></a>
+      <a class="nav-link" style="--c:#2e99c9" href="#sobre-mi"><span>sobre mí</span></a>
+      <a class="nav-link" style="--c:#f11216" href="#contacto"><span>contacto</span></a>
+    </nav>
+    <h1 class="mark-h1" data-split="chars" data-split-trigger="load">Guillermo</h1>
+  </aside>
+
+  <main id="trabajos" class="min-w-0 scroll-mt-[15px]">
+    <div class="columns-1 min-[560px]:columns-2 min-[1100px]:columns-3 min-[1800px]:columns-4 gap-x-[15px]">
+  <figure class="tile mb-[15px] break-inside-avoid" data-reveal style="--frame:#e21715">
+    <div class="frame aspect-[3/4]">
+      <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=75" srcset="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=500&q=75 500w, https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=75 900w, https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1400&q=75 1400w" sizes="(min-width:1800px) 24vw, (min-width:1100px) 31vw, (min-width:560px) 46vw, 88vw" data-sample="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=48&q=40" alt="Hilo rojo" loading="eager" fetchpriority="high" decoding="async" style="object-position:50% 30%">
+    </div>
+    <figcaption>Hilo rojo - Atelier Roca 2026</figcaption>
+  </figure>
+  <figure class="tile mb-[15px] break-inside-avoid" data-reveal style="--frame:#086392">
+    <div class="frame aspect-[4/5]">
+      <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=900&q=75" srcset="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=500&q=75 500w, https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=900&q=75 900w, https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=1400&q=75 1400w" sizes="(min-width:1800px) 24vw, (min-width:1100px) 31vw, (min-width:560px) 46vw, 88vw" data-sample="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=48&q=40" alt="Fotografía de Guillermo" loading="eager" fetchpriority="high" decoding="async" style="object-position:50% 30%">
+    </div>
+  </figure>
+  <div class="tile txt mb-[15px] break-inside-avoid" id="sobre-mi" data-reveal>
+    <p class="text-[18px] leading-[1.5] tracking-[-0.36px]">Soy Guillermo. Llevo once años fotografiando moda, retrato y campañas con luz natural, color directo y poco retoque. Vivo en Barcelona y viajo donde pida la historia.</p>
+  </div>
+  <figure class="tile mb-[15px] break-inside-avoid" data-reveal style="--frame:#f2572c">
+    <div class="frame aspect-[1/1]">
+      <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=900&q=75" srcset="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=500&q=75 500w, https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=900&q=75 900w, https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1400&q=75 1400w" sizes="(min-width:1800px) 24vw, (min-width:1100px) 31vw, (min-width:560px) 46vw, 88vw" data-sample="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=48&q=40" alt="Pasarela interior" loading="eager" fetchpriority="high" decoding="async" style="object-position:50% 30%">
+    </div>
+    <figcaption>Pasarela interior - Maison Vela 2025</figcaption>
+  </figure>
+  <figure class="tile mb-[15px] break-inside-avoid" data-reveal style="--frame:#b3813c">
+    <div class="frame aspect-[2/3]">
+      <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=900&q=75" srcset="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=500&q=75 500w, https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=900&q=75 900w, https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1400&q=75 1400w" sizes="(min-width:1800px) 24vw, (min-width:1100px) 31vw, (min-width:560px) 46vw, 88vw" data-sample="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=48&q=40" alt="Fotografía de Guillermo" loading="lazy" decoding="async" style="object-position:50% 30%">
+    </div>
+  </figure>
+  <figure class="tile mb-[15px] break-inside-avoid" data-reveal style="--frame:#5bc52c">
+    <div class="frame aspect-[4/3]">
+      <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=75" srcset="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=500&q=75 500w, https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=75 900w, https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1400&q=75 1400w" sizes="(min-width:1800px) 24vw, (min-width:1100px) 31vw, (min-width:560px) 46vw, 88vw" data-sample="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=48&q=40" alt="Retrato en estudio" loading="lazy" decoding="async" style="object-position:50% 30%">
+    </div>
+    <figcaption>Retrato en estudio - Revista Cobalto 2025</figcaption>
+  </figure>
+  <figure class="tile mb-[15px] break-inside-avoid" data-reveal style="--frame:#e21715">
+    <div class="frame aspect-[3/4]">
+      <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=900&q=75" srcset="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=500&q=75 500w, https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=900&q=75 900w, https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=1400&q=75 1400w" sizes="(min-width:1800px) 24vw, (min-width:1100px) 31vw, (min-width:560px) 46vw, 88vw" data-sample="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=48&q=40" alt="Fotografía de Guillermo" loading="lazy" decoding="async" style="object-position:50% 30%">
+    </div>
+  </figure>
+  <figure class="tile mb-[15px] break-inside-avoid" data-reveal style="--frame:#086392">
+    <div class="frame aspect-[1/1]">
+      <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=75" srcset="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=500&q=75 500w, https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=75 900w, https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1400&q=75 1400w" sizes="(min-width:1800px) 24vw, (min-width:1100px) 31vw, (min-width:560px) 46vw, 88vw" data-sample="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=48&q=40" alt="Luz de tarde" loading="lazy" decoding="async" style="object-position:50% 30%">
+    </div>
+    <figcaption>Luz de tarde - Estudio Nao 2024</figcaption>
+  </figure>
+  <figure class="brk span-all" data-reveal data-parallax-scope>
+    <img data-parallax="5" src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1600&q=75" srcset="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=900&q=75 900w, https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1600&q=75 1600w, https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=2200&q=75 2200w" sizes="(min-width:1100px) 78vw, 94vw" alt="Campaña de verano para Atelier Roca" loading="lazy" decoding="async">
+  </figure>
+  <figure class="tile mb-[15px] break-inside-avoid" data-reveal style="--frame:#f2572c">
+    <div class="frame aspect-[4/5]">
+      <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=900&q=75" srcset="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=500&q=75 500w, https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=900&q=75 900w, https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1400&q=75 1400w" sizes="(min-width:1800px) 24vw, (min-width:1100px) 31vw, (min-width:560px) 46vw, 88vw" data-sample="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=48&q=40" alt="Fotografía de Guillermo" loading="lazy" decoding="async" style="object-position:50% 30%">
+    </div>
+  </figure>
+  <figure class="tile mb-[15px] break-inside-avoid" data-reveal style="--frame:#b3813c">
+    <div class="frame aspect-[3/4]">
+      <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=75" srcset="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=75 500w, https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=75 900w, https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1400&q=75 1400w" sizes="(min-width:1800px) 24vw, (min-width:1100px) 31vw, (min-width:560px) 46vw, 88vw" data-sample="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=48&q=40" alt="Bajo el toldo" loading="lazy" decoding="async" style="object-position:50% 30%">
+    </div>
+    <figcaption>Bajo el toldo - Casa Almendra 2025</figcaption>
+  </figure>
+  <div class="tile txt mb-[15px] break-inside-avoid" data-reveal>
+    <ul class="text-[14px] leading-[1.4] grid gap-[8px] justify-items-start">
+      <li><span class="ul" style="--frame:#e21715">Moda editorial</span></li>
+      <li><span class="ul" style="--frame:#086392">Retrato</span></li>
+      <li><span class="ul" style="--frame:#f2572c">Campañas de producto</span></li>
+      <li><span class="ul" style="--frame:#5bc52c">Dirección de arte</span></li>
+    </ul>
+  </div>
+  <figure class="tile mb-[15px] break-inside-avoid" data-reveal style="--frame:#5bc52c">
+    <div class="frame aspect-[1/1]">
+      <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=900&q=75" srcset="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=500&q=75 500w, https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=900&q=75 900w, https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=1400&q=75 1400w" sizes="(min-width:1800px) 24vw, (min-width:1100px) 31vw, (min-width:560px) 46vw, 88vw" data-sample="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=48&q=40" alt="Fotografía de Guillermo" loading="lazy" decoding="async" style="object-position:50% 30%">
+    </div>
+  </figure>
+  <figure class="tile mb-[15px] break-inside-avoid" data-reveal style="--frame:#e21715">
+    <div class="frame aspect-[2/3]">
+      <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=75" srcset="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=500&q=75 500w, https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=75 900w, https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1400&q=75 1400w" sizes="(min-width:1800px) 24vw, (min-width:1100px) 31vw, (min-width:560px) 46vw, 88vw" data-sample="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=48&q=40" alt="Sombrero de paja" loading="lazy" decoding="async" style="object-position:50% 30%">
+    </div>
+    <figcaption>Sombrero de paja - Lumen Studio 2024</figcaption>
+  </figure>
+  <figure class="tile mb-[15px] break-inside-avoid" data-reveal style="--frame:#086392">
+    <div class="frame aspect-[4/5]">
+      <img src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=900&q=75" srcset="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=500&q=75 500w, https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=900&q=75 900w, https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=1400&q=75 1400w" sizes="(min-width:1800px) 24vw, (min-width:1100px) 31vw, (min-width:560px) 46vw, 88vw" data-sample="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=48&q=40" alt="Fotografía de Guillermo" loading="lazy" decoding="async" style="object-position:50% 30%">
+    </div>
+  </figure>
+  <figure class="tile mb-[15px] break-inside-avoid" data-reveal style="--frame:#f2572c">
+    <div class="frame aspect-[3/4]">
+      <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=900&q=75" srcset="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=500&q=75 500w, https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=900&q=75 900w, https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=1400&q=75 1400w" sizes="(min-width:1800px) 24vw, (min-width:1100px) 31vw, (min-width:560px) 46vw, 88vw" data-sample="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=48&q=40" alt="Fotografía de Guillermo" loading="lazy" decoding="async" style="object-position:50% 30%">
+    </div>
+  </figure>
+  <div class="tile txt mb-[15px] break-inside-avoid" data-reveal>
+    <p class="text-[14px] leading-[1.4]">Atelier Roca, Maison Vela, Revista Cobalto, Estudio Nao, Casa Almendra, Lumen Studio.</p>
+  </div>
+  <figure class="brk span-all" data-reveal data-parallax-scope>
+    <img data-parallax="5" src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1600&q=75" srcset="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=75 900w, https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1600&q=75 1600w, https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=2200&q=75 2200w" sizes="(min-width:1100px) 78vw, 94vw" alt="Editorial de calle para Maison Vela" loading="lazy" decoding="async">
+  </figure>
+  <figure class="tile mb-[15px] break-inside-avoid" data-reveal style="--frame:#b3813c">
+    <div class="frame aspect-[4/5]">
+      <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=75" srcset="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=500&q=75 500w, https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=75 900w, https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1400&q=75 1400w" sizes="(min-width:1800px) 24vw, (min-width:1100px) 31vw, (min-width:560px) 46vw, 88vw" data-sample="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=48&q=40" alt="Piel y tela" loading="lazy" decoding="async" style="object-position:50% 30%">
+    </div>
+    <figcaption>Piel y tela - Atelier Roca 2025</figcaption>
+  </figure>
+  <figure class="tile mb-[15px] break-inside-avoid" data-reveal style="--frame:#5bc52c">
+    <div class="frame aspect-[1/1]">
+      <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=900&q=75" srcset="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=500&q=75 500w, https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=900&q=75 900w, https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=1400&q=75 1400w" sizes="(min-width:1800px) 24vw, (min-width:1100px) 31vw, (min-width:560px) 46vw, 88vw" data-sample="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=48&q=40" alt="Fotografía de Guillermo" loading="lazy" decoding="async" style="object-position:50% 30%">
+    </div>
+  </figure>
+  <figure class="tile mb-[15px] break-inside-avoid" data-reveal style="--frame:#e21715">
+    <div class="frame aspect-[3/4]">
+      <img src="https://images.unsplash.com/photo-1550928431-ee0ec6db30d3?auto=format&fit=crop&w=900&q=75" srcset="https://images.unsplash.com/photo-1550928431-ee0ec6db30d3?auto=format&fit=crop&w=500&q=75 500w, https://images.unsplash.com/photo-1550928431-ee0ec6db30d3?auto=format&fit=crop&w=900&q=75 900w, https://images.unsplash.com/photo-1550928431-ee0ec6db30d3?auto=format&fit=crop&w=1400&q=75 1400w" sizes="(min-width:1800px) 24vw, (min-width:1100px) 31vw, (min-width:560px) 46vw, 88vw" data-sample="https://images.unsplash.com/photo-1550928431-ee0ec6db30d3?auto=format&fit=crop&w=48&q=40" alt="Fotografía de Guillermo" loading="lazy" decoding="async" style="object-position:50% 30%">
+    </div>
+  </figure>
+  <figure class="tile mb-[15px] break-inside-avoid" data-reveal style="--frame:#086392">
+    <div class="frame aspect-[2/3]">
+      <img src="https://images.unsplash.com/photo-1512310604669-443f26c35f52?auto=format&fit=crop&w=900&q=75" srcset="https://images.unsplash.com/photo-1512310604669-443f26c35f52?auto=format&fit=crop&w=500&q=75 500w, https://images.unsplash.com/photo-1512310604669-443f26c35f52?auto=format&fit=crop&w=900&q=75 900w, https://images.unsplash.com/photo-1512310604669-443f26c35f52?auto=format&fit=crop&w=1400&q=75 1400w" sizes="(min-width:1800px) 24vw, (min-width:1100px) 31vw, (min-width:560px) 46vw, 88vw" data-sample="https://images.unsplash.com/photo-1512310604669-443f26c35f52?auto=format&fit=crop&w=48&q=40" alt="Autoencargo, serie en curso 2026" loading="lazy" decoding="async" style="object-position:50% 30%">
+    </div>
+    <figcaption>Autoencargo, serie en curso 2026</figcaption>
+  </figure>
+  <figure class="tile mb-[15px] break-inside-avoid" data-reveal style="--frame:#f2572c">
+    <div class="frame aspect-[4/5]">
+      <img src="https://images.unsplash.com/photo-1492288991661-058aa541ff43?auto=format&fit=crop&w=900&q=75" srcset="https://images.unsplash.com/photo-1492288991661-058aa541ff43?auto=format&fit=crop&w=500&q=75 500w, https://images.unsplash.com/photo-1492288991661-058aa541ff43?auto=format&fit=crop&w=900&q=75 900w, https://images.unsplash.com/photo-1492288991661-058aa541ff43?auto=format&fit=crop&w=1400&q=75 1400w" sizes="(min-width:1800px) 24vw, (min-width:1100px) 31vw, (min-width:560px) 46vw, 88vw" data-sample="https://images.unsplash.com/photo-1492288991661-058aa541ff43?auto=format&fit=crop&w=48&q=40" alt="Fotografía de Guillermo" loading="lazy" decoding="async" style="object-position:50% 30%">
+    </div>
+  </figure>
+  <figure class="tile mb-[15px] break-inside-avoid" data-reveal style="--frame:#b3813c">
+    <div class="frame aspect-[3/4]">
+      <img src="https://images.unsplash.com/photo-1504703395950-b89145a5425b?auto=format&fit=crop&w=900&q=75" srcset="https://images.unsplash.com/photo-1504703395950-b89145a5425b?auto=format&fit=crop&w=500&q=75 500w, https://images.unsplash.com/photo-1504703395950-b89145a5425b?auto=format&fit=crop&w=900&q=75 900w, https://images.unsplash.com/photo-1504703395950-b89145a5425b?auto=format&fit=crop&w=1400&q=75 1400w" sizes="(min-width:1800px) 24vw, (min-width:1100px) 31vw, (min-width:560px) 46vw, 88vw" data-sample="https://images.unsplash.com/photo-1504703395950-b89145a5425b?auto=format&fit=crop&w=48&q=40" alt="Fotografía de Guillermo" loading="lazy" decoding="async" style="object-position:50% 30%">
+    </div>
+  </figure>
+
+    </div>
+
+    <section id="contacto" class="mt-[120px] mb-[43px] scroll-mt-[15px]" aria-label="Contacto">
+      <p class="max-w-[34ch] text-[18px] leading-[1.5] tracking-[-0.36px]" data-reveal>Agenda abierta para el primer trimestre de 2027. Cuéntame qué imagen necesitas y cuándo.</p>
+      <div class="flex flex-wrap gap-[15px] mt-[43px]" data-stagger>
+        <a class="act m-press" style="--c:#f11216" href="mailto:hola@guillermofotografia.com">
+          <i data-lucide="mail" aria-hidden="true"></i><span>hola@guillermofotografia.com</span><i data-lucide="arrow-up-right" class="arrow" aria-hidden="true"></i>
+        </a>
+        <a class="act m-press" style="--c:#2e99c9" href="https://instagram.com/guillermo.fotografia" target="_blank" rel="noopener">
+          <i data-lucide="instagram" aria-hidden="true"></i><span>@guillermo.fotografia</span><i data-lucide="arrow-up-right" class="arrow" aria-hidden="true"></i>
+        </a>
+      </div>
+      <p class="mt-[43px] text-[10px] leading-none tracking-[-0.2px]">© 2026 Guillermo. Todos los derechos reservados.</p>
+    </section>
+  </main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+
+<!-- Webestatica Motion Kit (sin cambios). Nivel "sutil" via data-motion en <body> -->
+<script>
+const PRESETS = {
+  sutil:     { dur: 1.1,  ease: 'power2.out', y: 28, stagger: 0.12, text: 0.035 },
+  media:     { dur: 0.9,  ease: 'power3.out', y: 48, stagger: 0.10, text: 0.03  },
+  expresiva: { dur: 0.75, ease: 'power4.out', y: 70, stagger: 0.07, text: 0.022 },
+};
+
+const BP_DESKTOP = '(min-width: 768px)';
+const MQ = {
+  desktop: BP_DESKTOP,
+  mobile: '(max-width: 767.98px)',
+  reduce: '(prefers-reduced-motion: reduce)',
+  fine: '(pointer: fine)',
+};
+
+function initMotion({ gsap, ScrollTrigger, Lenis }, opts = {}) {
+  // Una sola instancia viva del kit por documento.
+  if (typeof window.__webestaticaMotionCleanup === 'function') {
+    window.__webestaticaMotionCleanup();
+  }
+
+  gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.config({ ignoreMobileResize: true, limitCallbacks: true });
+
+  const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+  const level = opts.level || document.body.dataset.motion || 'media';
+  const P = { ...(PRESETS[level] || PRESETS.media), ...(opts.preset || {}) };
+  const cleanups = [];
+
+  /* ---------- Split text (se construye una vez) ---------- */
+  const splitCache = new WeakMap();
+  const splitWords = (el, chars) => {
+    const key = chars ? 'chars' : 'words';
+    const cached = splitCache.get(el);
+    if (cached && cached.key === key) return cached.nodes;
+
+    const text = el.textContent.trim().replace(/\s+/g, ' ');
+    el.setAttribute('aria-label', text);
+    el.textContent = '';
+    const nodes = [];
+    const frag = document.createDocumentFragment();
+    text.split(' ').forEach((w, i, a) => {
+      const ws = document.createElement('span');
+      ws.className = 'm-word';
+      ws.setAttribute('aria-hidden', 'true');
+      if (chars) {
+        [...w].forEach(ch => {
+          const c = document.createElement('span');
+          c.className = 'm-char'; c.textContent = ch; ws.appendChild(c); nodes.push(c);
+        });
+      } else {
+        const inner = document.createElement('span');
+        inner.className = 'm-inner'; inner.textContent = w; ws.appendChild(inner); nodes.push(inner);
+      }
+      frag.appendChild(ws);
+      if (i < a.length - 1) frag.appendChild(document.createTextNode(' '));
+    });
+    el.appendChild(frag);
+    splitCache.set(el, { key, nodes });
+    return nodes;
+  };
+
+  /* ---------- Split reveal: construir slices una vez ---------- */
+  const splitRevealEls = $$('[data-split-reveal]');
+  splitRevealEls.forEach(el => {
+    if (el.dataset.built) return;
+    el.dataset.built = '1';
+    const mode = el.dataset.splitReveal || 'cols';
+    el.style.setProperty('--m-img', `url("${el.dataset.src}")`);
+    el.classList.add('m-split', `m-split--${mode}`);
+    el.setAttribute('role', 'img');
+    if (el.dataset.alt) el.setAttribute('aria-label', el.dataset.alt);
+    const frag = document.createDocumentFragment();
+    const add = (i, clip, dir = 1) => {
+      const s = document.createElement('div');
+      s.className = 'm-slice';
+      s.style.setProperty('--i', i);
+      s.style.setProperty('--dir', dir);
+      s.style.clipPath = clip;
+      frag.appendChild(s);
+    };
+    const pct = v => `${(v * 100).toFixed(3)}%`;
+    if (mode === 'grid') {
+      const cols = +el.dataset.cols || 8, rows = +el.dataset.rows || 4;
+      for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) {
+        add(r + c, `inset(${pct(r / rows)} ${pct((cols - 1 - c) / cols)} ${pct((rows - 1 - r) / rows)} ${pct(c / cols)})`);
+      }
+    } else {
+      const n = +el.dataset.count || (mode === 'cols' ? 8 : 6);
+      for (let i = 0; i < n; i++) {
+        const a = pct(i / n), b = pct((n - 1 - i) / n);
+        add(i, mode === 'cols' ? `inset(0 ${b} 0 ${a})` : `inset(${a} 0 ${b} 0)`, i % 2 ? 1 : -1);
+      }
+    }
+    el.appendChild(frag);
+  });
+
+  /* ---------- Efectos, reconstruidos por gsap.matchMedia ---------- */
+  const mm = gsap.matchMedia();
+
+  mm.add(MQ, ctx => {
+    const { desktop, mobile, reduce, fine } = ctx.conditions;
+
+    /* Split reveal: con reduced motion se muestra directamente */
+    splitRevealEls.forEach(el => {
+      if (el.classList.contains('is-visible')) return;
+      if (reduce) { el.classList.add('is-visible'); return; }
+      ScrollTrigger.create({
+        trigger: el, start: 'top 80%', once: true,
+        onEnter: () => el.classList.add('is-visible'),
+      });
+    });
+
+    if (!reduce) {
+      /* Scroll reveal agrupado: un trigger por lote, no por elemento */
+      const reveals = $$('[data-reveal]');
+      if (reveals.length) {
+        gsap.set(reveals, { y: P.y, autoAlpha: 0 });
+        ScrollTrigger.batch(reveals, {
+          start: 'top 85%',
+          once: true,
+          onEnter: batch => gsap.to(batch, {
+            y: 0, autoAlpha: 1, duration: P.dur, ease: P.ease,
+            stagger: 0.06, overwrite: true, clearProps: 'transform,visibility',
+          }),
+        });
+      }
+
+      /* Stagger: los hijos directos entran escalonados */
+      $$('[data-stagger]').forEach(c => gsap.fromTo(c.children,
+        { y: P.y, autoAlpha: 0 },
+        { y: 0, autoAlpha: 1, duration: P.dur, ease: P.ease, clearProps: 'transform,visibility',
+          stagger: parseFloat(c.dataset.stagger) || P.stagger,
+          scrollTrigger: { trigger: c, start: 'top 85%', once: true } },
+      ));
+
+      /* Text reveal: data-split="chars|words|lines", data-split-trigger="load" para el hero */
+      $$('[data-split]').forEach(el => {
+        const mode = el.dataset.split || 'words';
+        const onLoad = el.dataset.splitTrigger === 'load';
+        const st = onLoad ? undefined : { trigger: el, start: 'top 85%', once: true };
+        const delay = onLoad ? 0.15 : 0;
+        if (mode === 'chars') {
+          gsap.from(splitWords(el, true), {
+            yPercent: 115, rotate: level === 'expresiva' ? 6 : 0,
+            duration: P.dur * 1.1, ease: P.ease, stagger: P.text, delay, scrollTrigger: st,
+          });
+        } else if (mode === 'lines') {
+          const inners = splitWords(el, false);
+          // Agrupar por línea: lectura de layout en bloque (sin intercalar escrituras)
+          const tops = inners.map(n => n.parentElement.offsetTop);
+          const groups = [];
+          let top = null;
+          inners.forEach((n, i) => {
+            if (tops[i] !== top) { groups.push([]); top = tops[i]; }
+            groups[groups.length - 1].push(n);
+          });
+          const tl = gsap.timeline({ delay, scrollTrigger: st });
+          groups.forEach((g, i) => tl.from(g, { yPercent: 115, duration: P.dur * 1.2, ease: P.ease }, i * P.stagger * 1.5));
+        } else {
+          gsap.from(splitWords(el, false), {
+            yPercent: 115, duration: P.dur, ease: P.ease, stagger: P.stagger * 0.8, delay, scrollTrigger: st,
+          });
+        }
+      });
+
+      /* Parallax: data-parallax="15" (porcentaje de desplazamiento) */
+      $$('[data-parallax]').forEach(el => {
+        const s = (parseFloat(el.dataset.parallax) || 15) * (mobile ? 0.5 : 1);
+        gsap.fromTo(el, { yPercent: -s, force3D: true }, {
+          yPercent: s, ease: 'none', force3D: true,
+          scrollTrigger: {
+            trigger: el.closest('[data-parallax-scope]') || el.parentElement,
+            start: 'top bottom', end: 'bottom top',
+            // Lenis ya suaviza el scroll: scrub numérico aquí duplicaría la inercia
+            scrub: true,
+          },
+        });
+      });
+
+      /* Contadores: data-counter="1250" */
+      $$('[data-counter]').forEach(el => {
+        const raw = el.dataset.counter, end = parseFloat(raw);
+        const dec = (raw.split('.')[1] || '').length;
+        const nf = new Intl.NumberFormat('es-ES', { minimumFractionDigits: dec, maximumFractionDigits: dec });
+        const o = { v: 0 };
+        let last = '';
+        el.textContent = nf.format(0);
+        gsap.to(o, {
+          v: end, duration: 1.8, ease: 'power2.out',
+          scrollTrigger: { trigger: el, start: 'top 90%', once: true },
+          onUpdate: () => {
+            const next = nf.format(o.v);
+            if (next !== last) { el.textContent = next; last = next; } // solo toca el DOM si cambia
+          },
+        });
+      });
+
+      /* Stacking cards (solo desktop):
+         [data-stack] > [data-stack-card] > [data-stack-inner] (+ [data-stack-shade] opcional)
+         El sticky lo pone el CSS; aquí solo la profundidad de la card que queda tapada.
+         Opcionales en [data-stack]: data-stack-scale="0.94" data-stack-dim="0.3" */
+      if (desktop) {
+        $$('[data-stack]').forEach(stack => {
+          const cards = $$('[data-stack-card]', stack);
+          const scale = parseFloat(stack.dataset.stackScale) || 0.94;
+          const dim = parseFloat(stack.dataset.stackDim) || 0.3;
+          cards.forEach((card, i) => {
+            if (i === 0) return;
+            const prev = cards[i - 1];
+            const inner = prev.querySelector('[data-stack-inner]') || prev;
+            const shade = prev.querySelector('[data-stack-shade]');
+            const stickyTop = () => parseFloat(getComputedStyle(card).top) || 0;
+            const tl = gsap.timeline({
+              defaults: { ease: 'none' },
+              scrollTrigger: {
+                trigger: card,
+                start: 'top bottom',
+                end: () => `top ${stickyTop()}px`,
+                scrub: true,
+                invalidateOnRefresh: true,
+              },
+            });
+            tl.fromTo(inner, { scale: 1, force3D: true }, { scale, force3D: true }, 0);
+            if (shade) tl.fromTo(shade, { opacity: 0 }, { opacity: dim }, 0);
+          });
+        });
+      }
+    }
+
+    /* Sticky scroll: [data-pin-steps] con [data-step], [data-step-media] y [data-step-progress] */
+    $$('[data-pin-steps]').forEach(sec => {
+      const steps = $$('[data-step]', sec), media = $$('[data-step-media]', sec);
+      const bar = sec.querySelector('[data-step-progress]');
+      const setBar = bar ? gsap.quickSetter(bar, 'scaleX') : null;
+      const n = steps.length; let cur = -1;
+      const set = i => {
+        if (i === cur) return; cur = i;
+        steps.forEach((s, k) => s.classList.toggle('is-active', k === i));
+        media.forEach((m, k) => m.classList.toggle('is-active', k === i));
+      };
+      set(0);
+      ScrollTrigger.create({
+        trigger: sec, start: 'top top', end: `+=${n * 80}%`,
+        pin: true, anticipatePin: 1,
+        onUpdate: self => {
+          if (setBar) setBar(self.progress);
+          set(Math.min(n - 1, Math.floor(self.progress * n)));
+        },
+      });
+    });
+
+    /* Horizontal scroll: [data-hscroll] con [data-hscroll-track]. En móvil pasa a swipe nativo */
+    $$('[data-hscroll]').forEach(sec => {
+      const track = sec.querySelector('[data-hscroll-track]');
+      if (!track) return;
+      if (reduce || mobile) { sec.classList.add('m-hscroll--native'); return; }
+      sec.classList.remove('m-hscroll--native');
+      const dist = () => Math.max(0, track.scrollWidth - innerWidth);
+      gsap.to(track, {
+        x: () => -dist(), ease: 'none', force3D: true,
+        scrollTrigger: {
+          trigger: sec, start: 'top top', end: () => '+=' + dist(),
+          pin: true, anticipatePin: 1, scrub: true, invalidateOnRefresh: true,
+        },
+      });
+    });
+
+    /* Magnetic: data-magnetic="0.35" (solo puntero fino) */
+    const local = [];
+    if (fine && !reduce) {
+      $$('[data-magnetic]').forEach(btn => {
+        const k = parseFloat(btn.dataset.magnetic) || 0.35;
+        const inner = btn.firstElementChild;
+        const q = { duration: 0.5, ease: 'power3.out' };
+        const bx = gsap.quickTo(btn, 'x', q), by = gsap.quickTo(btn, 'y', q);
+        const ix = inner ? gsap.quickTo(inner, 'x', q) : null;
+        const iy = inner ? gsap.quickTo(inner, 'y', q) : null;
+        let rect = null;
+        const enter = () => { rect = btn.getBoundingClientRect(); };
+        const move = e => {
+          if (!rect) rect = btn.getBoundingClientRect();
+          const x = e.clientX - (rect.left + rect.width / 2);
+          const y = e.clientY - (rect.top + rect.height / 2);
+          bx(x * k); by(y * k);
+          if (ix) { ix(x * k * 0.4); iy(y * k * 0.4); }
+        };
+        const leave = () => {
+          rect = null;
+          gsap.to([btn, inner].filter(Boolean), { x: 0, y: 0, duration: 1.1, ease: 'elastic.out(1, 0.3)', overwrite: 'auto' });
+        };
+        btn.addEventListener('pointerenter', enter);
+        btn.addEventListener('pointermove', move);
+        btn.addEventListener('pointerleave', leave);
+        local.push(() => {
+          btn.removeEventListener('pointerenter', enter);
+          btn.removeEventListener('pointermove', move);
+          btn.removeEventListener('pointerleave', leave);
+        });
+      });
+    }
+
+    /* Custom cursor (opt-in, solo puntero fino) */
+    if (opts.cursor && fine && !reduce) {
+      const ring = document.createElement('div'); ring.className = 'm-cursor';
+      const dot = document.createElement('div'); dot.className = 'm-cursor-dot';
+      [ring, dot].forEach(n => { n.setAttribute('aria-hidden', 'true'); document.body.appendChild(n); });
+      gsap.set([ring, dot], { xPercent: -50, yPercent: -50 });
+      const rx = gsap.quickTo(ring, 'x', { duration: 0.45, ease: 'power3.out' });
+      const ry = gsap.quickTo(ring, 'y', { duration: 0.45, ease: 'power3.out' });
+      const dx = gsap.quickTo(dot, 'x', { duration: 0.08 });
+      const dy = gsap.quickTo(dot, 'y', { duration: 0.08 });
+      const move = e => { rx(e.clientX); ry(e.clientY); dx(e.clientX); dy(e.clientY); };
+      const over = e => ring.classList.toggle('is-hover', !!e.target.closest('a, button, [data-cursor]'));
+      addEventListener('pointermove', move, { passive: true });
+      document.addEventListener('pointerover', over, { passive: true });
+      local.push(() => {
+        removeEventListener('pointermove', move);
+        document.removeEventListener('pointerover', over);
+        ring.remove(); dot.remove();
+      });
+    }
+
+    // Se ejecuta al cruzar un breakpoint o al destruir el kit
+    return () => local.forEach(f => f());
+  });
+
+  /* ---------- Smooth scroll (Lenis) ---------- */
+  const reduceNow = matchMedia(MQ.reduce).matches;
+  if ((opts.smooth ?? true) && !reduceNow && Lenis) {
+    const html = document.documentElement;
+    // scroll-behavior: smooth (p. ej. la clase scroll-smooth de Tailwind) pelea con Lenis
+    const prevBehavior = html.style.scrollBehavior;
+    html.style.scrollBehavior = 'auto';
+
+    const lenis = new Lenis({
+      lerp: opts.lerp ?? 0.1,
+      anchors: true,
+      autoRaf: false,          // el ritmo lo marca el ticker de GSAP, no un rAF propio
+      smoothWheel: true,
+      syncTouch: false,        // en táctil, scroll nativo (más fluido que simularlo)
+      ...(opts.lenis || {}),
+    });
+    lenis.on('scroll', ScrollTrigger.update);
+    const raf = t => lenis.raf(t * 1000);
+    gsap.ticker.add(raf);
+    gsap.ticker.lagSmoothing(0);
+    window.lenis = lenis; // para pausar desde modales: window.lenis.stop() / .start()
+
+    cleanups.push(() => {
+      gsap.ticker.remove(raf);
+      lenis.destroy();
+      if (window.lenis === lenis) delete window.lenis;
+      html.style.scrollBehavior = prevBehavior;
+    });
+  }
+
+  /* ---------- Recalcular posiciones cuando cargan fuentes e imágenes ---------- */
+  let refreshId = 0;
+  const refresh = () => {
+    cancelAnimationFrame(refreshId);
+    refreshId = requestAnimationFrame(() => ScrollTrigger.refresh());
+  };
+  document.fonts?.ready.then(refresh);
+  if (document.readyState === 'complete') refresh();
+  else addEventListener('load', refresh, { once: true });
+  cleanups.push(() => {
+    cancelAnimationFrame(refreshId);
+    removeEventListener('load', refresh);
+  });
+
+  const destroy = () => {
+    cleanups.forEach(f => f());
+    mm.revert();
+    if (window.__webestaticaMotionCleanup === destroy) delete window.__webestaticaMotionCleanup;
+  };
+  window.__webestaticaMotionCleanup = destroy;
+  return destroy;
+}
+
+</script>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var mark = document.querySelector('.mark');
+  var nav = document.querySelector('.mark-nav');
+  var h1 = document.querySelector('.mark-h1');
+
+  /* 1. El wordmark ocupa toda la altura disponible, sea cual sea la tipografia instalada */
+  function fitMark() {
+    var prev = h1.style.fontSize;
+    h1.style.fontSize = '100px';
+    var w100 = h1.offsetWidth;
+    h1.style.fontSize = prev;
+    if (!w100) return;
+    var avail = mark.clientHeight - nav.offsetHeight - 15;
+    var byHeight = 100 * avail / w100;
+    var byWidth = innerWidth * (innerWidth < 560 ? 0.25 : 0.2);
+    root.style.setProperty('--mark', Math.max(48, Math.min(byHeight, byWidth)) + 'px');
+  }
+  fitMark();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitMark);
+  var t; addEventListener('resize', function () { clearTimeout(t); t = setTimeout(fitMark, 120); });
+
+  /* 2. Marco cromatico: se muestrea el tono dominante de cada foto y se ajusta a la paleta */
+  var FRAMES = [[1, '#e21715'], [15, '#f2572c'], [38, '#b3813c'], [100, '#5bc52c'], [199, '#086392']];
+  function frameFor(d) {
+    var bins = new Float32Array(24), total = 0, n = d.length / 4;
+    for (var i = 0; i < d.length; i += 4) {
+      var r = d[i] / 255, g = d[i + 1] / 255, b = d[i + 2] / 255;
+      var max = Math.max(r, g, b), c = max - Math.min(r, g, b);
+      if (c < 0.12 || max < 0.2) continue;
+      var h = max === r ? ((g - b) / c) % 6 : max === g ? (b - r) / c + 2 : (r - g) / c + 4;
+      h = (h * 60 + 360) % 360;
+      bins[Math.floor(h / 15) % 24] += c; total += c;
+    }
+    if (total / n < 0.06) return '#000000';
+    var best = 0;
+    for (var k = 1; k < 24; k++) if (bins[k] > bins[best]) best = k;
+    var hue = best * 15 + 7.5, pick = FRAMES[0], dist = 999;
+    FRAMES.forEach(function (f) {
+      var dd = Math.abs(hue - f[0]); dd = Math.min(dd, 360 - dd);
+      if (dd < dist) { dist = dd; pick = f; }
+    });
+    return pick[1];
+  }
+  document.querySelectorAll('.tile img[data-sample]').forEach(function (img) {
+    var fig = img.closest('.tile');
+    var drop = function () { fig.remove(); };
+    img.addEventListener('error', drop);
+    if (img.complete && img.naturalWidth === 0 && img.currentSrc) drop();
+    var s = new Image();
+    s.crossOrigin = 'anonymous';
+    s.onload = function () {
+      try {
+        var cv = document.createElement('canvas'); cv.width = cv.height = 24;
+        var cx = cv.getContext('2d', { willReadFrequently: true });
+        cx.drawImage(s, 0, 0, 24, 24);
+        fig.style.setProperty('--frame', frameFor(cx.getImageData(0, 0, 24, 24).data));
+      } catch (e) { /* sin CORS: se queda el color de respaldo */ }
+    };
+    s.src = img.dataset.sample;
+  });
+
+  /* 3. Iconos y movimiento */
+  if (window.lucide) lucide.createIcons({ attrs: { 'stroke-width': 2 } });
+  if (window.gsap && window.ScrollTrigger) {
+    initMotion(
+      { gsap: window.gsap, ScrollTrigger: window.ScrollTrigger, Lenis: window.Lenis },
+      { level: 'sutil', lerp: 0.09 }
+    );
+  }
+})();
+</script>
+</body>
+</html>
